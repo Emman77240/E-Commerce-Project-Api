@@ -34,7 +34,7 @@ const corsOptions = {
 }*/
 
 
-app.use(cors({credentials: true, origin: 'https://sweet-dragon-9c8740.netlify.app'}));
+app.use(cors({credentials: true, origin: 'https://earware.onrender.com'}));
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
