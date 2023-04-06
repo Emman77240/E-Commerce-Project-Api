@@ -22,14 +22,15 @@ mongoose
 // Whitelist Client URL
 const whitelist = ["https://sweet-dragon-9c8740.netlify.app/", "http://localhost:3000", "https://earware.onrender.com/"]
 const corsOptions = {
-  origin: function(origin, callback) {
-    if(!origin || whitelist.indexOf(origin) !== -1) {
+  origin: (origin, callback) => {
+    if(whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true)
     } else {
       callback(new Error("Not allowed by CORS"))
     }
   }, 
-  credenials: true
+  credenials: true,
+  optionsSuccessStatus: 200
 }
 
 
