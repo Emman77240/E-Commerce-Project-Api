@@ -20,7 +20,7 @@ mongoose
   });
 
 // Whitelist Client URL
-const whitelist = ["https://sweet-dragon-9c8740.netlify.app", "http://localhost:3000", "https://earware.onrender.com"]
+/*const whitelist = ["https://sweet-dragon-9c8740.netlify.app", "http://localhost:3000", "https://earware.onrender.com"]
 const corsOptions = {
   origin: (origin, callback) => {
     if(whitelist.indexOf(origin) !== -1 || !origin) {
@@ -31,10 +31,10 @@ const corsOptions = {
   }, 
   credenials: true,
   optionsSuccessStatus: 200
-}
+}*/
 
 
-app.use(cors(corsOptions));
+app.use(cors({credentials: true, origin: 'https://sweet-dragon-9c8740.netlify.app'}));
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
