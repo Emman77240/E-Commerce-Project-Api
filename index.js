@@ -20,7 +20,7 @@ mongoose
   });
 
 // Whitelist Client URL
-const whitelist = ["https://sweet-dragon-9c8740.netlify.app/", "http://localhost:3000", "https://earware.onrender.com/"]
+const whitelist = ["https://sweet-dragon-9c8740.netlify.app", "http://localhost:3000", "https://earware.onrender.com"]
 const corsOptions = {
   origin: (origin, callback) => {
     if(whitelist.indexOf(origin) !== -1 || !origin) {
